@@ -3,7 +3,19 @@
 .notosanskr * {
   font-family: "Noto Sans KR", sans-serif;
 }
-
+@font-face {
+  font-family: 'HakgyoansimWoojuR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "omyu_pretty";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 @font-face {
   font-family: "PyeongChangPeace-Bold";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
@@ -11,6 +23,7 @@
   font-weight: 700;
   font-style: normal;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +39,7 @@ a {
   color: inherit;
 }
 
-body {
+body #root {
   font-family: "Noto Sans KR", sans-serif;
   color: #333;
   word-break: keep-all;
@@ -40,14 +53,46 @@ img {
   width: 100%;
 }
 
+header::before {
+  content: "";
+  background-color: #000;
+  opacity: 15%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+}
+header {
+  max-width: 767px;
+  width: 100%;
+  background: url(../public/img/busan.jpg) center / cover no-repeat;
+  position: relative;
+  z-index: -1;
+  margin: 0 auto;
+}
+header h2 {
+  font-family: 'HakgyoansimWoojuR';
+
+  text-align: center;
+  width: 100%;
+  max-width: 767px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 30px;
+  color: #fff;
+  position: relative;
+  z-index: 9;
+  font-weight: bold;
+}
 .list {
   text-align: center;
 }
 
 .list h3 {
-  font-family: "PyeongChangPeace-Bold";
-  font-size: 80px;
-  margin: 50px 0;
+  font-family: "omyu_pretty";
+  font-size: 90px;
+  margin: 10px 0 20px;
   padding: 20px 0;
   color: #22668d;
   border-radius: 20px;
@@ -57,14 +102,14 @@ img {
 .list h3::before {
   content: url(../public/img/icons8-바닷가-64.png);
   position: absolute;
-  bottom: -4px;
-  right: -40px;
+  bottom: 26px;
+  right: -51px;
 }
 .list h3::after {
   content: url(../public/img/icons8-영화-프로젝터-64.png);
   position: absolute;
-  top: -10px;
-  left: -30px;
+  bottom: 0px;
+  left: -40px;
 }
 .list .item {
   margin-bottom: 50px;
@@ -150,7 +195,7 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  background-color: #FFCC70;
+  background-color: #ffcc70;
 }
 
 footer ul {

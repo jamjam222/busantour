@@ -18,7 +18,7 @@ const TourList = () => {
         // 에러가 있다면 catch값으로 넘어감 */
       try {
         const response = await axios.get(
-          `https://apis.data.go.kr/6260000/AttractionService/getAttractionKr?serviceKey=${key}&numOfRows=30&pageNo=1&resultType=json`
+          `http://apis.data.go.kr/6260000/AttractionService/getAttractionKr?serviceKey=${key}&numOfRows=30&pageNo=1&resultType=json`
         );
         setTour(response.data.getAttractionKr.item);
       } catch (error) {
@@ -30,7 +30,7 @@ const TourList = () => {
 
   return (
     <div className="list">
-      <h3>부산 명소</h3>
+      <h3>Tour List</h3>
       <div className="main_list">
         {tour.map((tourMap) => (
           <TourItem article={tourMap} />
